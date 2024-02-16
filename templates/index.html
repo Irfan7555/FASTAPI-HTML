@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <title>FastAPI with HTML and CSS</title>
+</head>
+<body>
+    <h1>Welcome to Travel Blog</h1>
+
+    <h2>Register</h2>
+    <form action="/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="username">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <br />
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+
+    
+
+    
+    <article>
+        <h2>Ooty</h2>
+        <img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/09/Munnar.webp" alt="Blog Post Image">
+        <p>Date: February 10, 2024</p>
+        <p>Author: Your Name</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ultricies est, vel ultrices ligula.
+            Vestibulum ac dapibus nulla. Mauris ac tellus sit amet turpis posuere vulputate vel sit amet odio.
+            Suspendisse id odio a risus fermentum consequat vel nec ex. Integer varius eros ac ultricies bibendum.
+            Fusce congue purus ac lorem pharetra tincidunt. In hac habitasse platea dictumst. Suspendisse potenti.
+            Integer sodales ex eu eros congue, et pellentesque velit rhoncus. Sed tincidunt justo at lectus blandit,
+            eu hendrerit lectus efficitur.</p>
+
+        <p>More content goes here...</p>
+    </article>
+
+
+    <article>
+        <div>
+            <h1>latest Blog Post</h1>
+         
+                {% for post in latest_blog_posts %}
+
+                    <h2>{{ post.title }}</h2>
+                    <img src="{{ post.image_url }}" alt="Blog Post Image">
+                    <p>Author: {{ post.author }}</p>
+                    <p>{{ post.content }}</p>
+                    <br />                       
+                {% endfor %}
+            
+        </div>
+    </article>
+       
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        article {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Post Success</h1>
+    </header>
+
+    <article>
+        <h1>{{ blog_title }}</h1>
+        <img src="{{ image_url }}" alt="Blog Post Image">
+        <p>Author: {{ author }}</p>
+
+        <p>{{ blog_content }}</p>
+
+        <p>Your post has been successfully submitted!</p>
+        
+        <p>Go to <a href="/">Home</a></p>
+    </article>
+</body>
+
+</html>
